@@ -1,4 +1,5 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { NavLink, Outlet } from "react-router-dom";
 
 function ContactUs() {
   return (
@@ -9,12 +10,22 @@ function ContactUs() {
         <Container>
           <Navbar.Brand>Cabang</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link>Bali</Nav.Link>
-            <Nav.Link>Jakarta</Nav.Link>
-            <Nav.Link>Padang</Nav.Link>
+            <Nav.Link as={NavLink} to="bali">
+              Bali
+            </Nav.Link>
+
+            <Nav.Link as={NavLink} to="jakarta">
+              Jakarta
+            </Nav.Link>
+
+            <Nav.Link as={NavLink} to="padang">
+              Padang
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
+
+      <Outlet />
     </Container>
   );
 }
